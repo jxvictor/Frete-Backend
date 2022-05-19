@@ -1,5 +1,5 @@
-# JavaTest
-Teste de seleção para vaga de Java
+# Estudo pessoal
+Atualmente em atualizações para compatibilidade com o frontend.
 
 ## Spring Boot
 
