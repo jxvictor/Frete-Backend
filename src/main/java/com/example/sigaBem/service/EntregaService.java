@@ -35,9 +35,6 @@ public class EntregaService {
 	public Page<Entrega> findAll(Pageable pageable){
 		return entregaRepository.findAll(pageable);
 	}
-	/*public Page<Endereco> findAlls(Pageable pageable){
-		return enderecoRepository.findAll(pageable);
-	}*/
 	/*public List<Entrega> findAll(){
 		return entregaRepository.findAll();
 	}*/

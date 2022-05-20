@@ -2,6 +2,8 @@ package com.example.sigaBem.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.sigaBem.model.Endereco;
 import com.example.sigaBem.service.EnderecoService;
+import com.example.sigaBem.service.PageEnderecoService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -24,8 +27,9 @@ public class EnderecoController {
 	
 	@Autowired
     private EnderecoService cepService;
-	//@Autowired
-    //private EntregaService service;
+	
+	@Autowired
+    private PageEnderecoService service;
 
 	@ApiOperation(value = "Retorna o cep especificado")
 	@ApiResponses(value = {
@@ -47,16 +51,16 @@ public class EnderecoController {
 		} 
     }
 	
-	/*@GetMapping()
+	@GetMapping()
 	public ResponseEntity<Page<Endereco>> obterTodos(Pageable pageable){		
 		try
 		{
-			return new ResponseEntity<Page<Endereco>>(service.findAlls(pageable), HttpStatus.OK);
+			return new ResponseEntity<Page<Endereco>>(service.findAll(pageable), HttpStatus.OK);
 		}
 		catch(Exception e)
 		{
 			return new ResponseEntity<Page<Endereco>>(HttpStatus.BAD_REQUEST);
 		}
-	}*/
+	}
 
 }

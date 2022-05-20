@@ -10,7 +10,7 @@ import com.example.sigaBem.model.Endereco;
 
 @Service
 @FeignClient(url="https://viacep.com.br/ws/", name = "viacep")
-public interface EnderecoService {
+public interface EnderecoService{
  
     @GetMapping("{cep}/json")
     Endereco buscarEnderecoPor(@PathVariable("cep") String cep);
